@@ -1,1 +1,64 @@
-<!-- Electron UI HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>YucaRebel Studio</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 20px;
+    }
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+    }
+    .dark {
+      --bg: #1e1e1e;
+      --text: #ffffff;
+    }
+    input, select {
+      padding: 8px;
+      margin: 4px;
+    }
+    button {
+      padding: 8px 16px;
+      margin-top: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>YucaRebel Studio</h1>
+  
+  <section>
+    <h3>OBS Settings</h3>
+    <label>IP: <input id="ip" /></label><br/>
+    <label>Port: <input id="port" type="number" /></label><br/>
+    <label>Password: <input id="password" type="password" /></label><br/>
+    <button onclick="saveSettings()">Save</button>
+    <button onclick="connect()">Connect</button>
+    <button onclick="disconnect()">Disconnect</button>
+  </section>
+
+  <section>
+    <h3>Send Data to OBS</h3>
+    <label>Constituency: <input id="const" /></label><br/>
+    <label>Parish: <input id="parish" /></label><br/>
+    <label>JLP: <input id="jlp" /></label><br/>
+    <label>PNP: <input id="pnp" /></label><br/>
+    <label># of Boxes: <input id="boxes" /></label><br/>
+    <label>Box Count: <input id="box_count" /></label><br/>
+    <label>Count %: <input id="percent" /></label><br/>
+    <button onclick="updateOBS()">Send</button>
+  </section>
+
+  <section>
+    <h3>Appearance</h3>
+    <button onclick="toggleTheme()">Toggle Dark Mode</button>
+  </section>
+
+  <script src="settings.js"></script>
+</body>
+</html>
